@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Notifications extends StatelessWidget {
   const Notifications({Key? key}) : super(key: key);
   @override
@@ -53,39 +51,55 @@ class Notifications extends StatelessWidget {
                 ),
                 Container(
                   margin: const EdgeInsets.fromLTRB(0.0, 15.0, 20.0, 30.0),
-                  child: TextButton(
-                    onPressed: () {
-                      AlertDialog(
-                        title: Text('Message d\'alerte',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                        content: Text('Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant',style: TextStyle(fontSize: 16,color:const Color(0xffABABAC) ),),
-                        actions: [
-                          TextButton(onPressed: () {}, child: Text('Non')),
-                          TextButton(onPressed: () {}, child: Text('oui')),
-                        ],
-                        shape: CircleBorder(),
-
-                      );
-
-                    },
-                    child: Text(
-                      'Effacer les notifications',
-                      style: TextStyle(
-                          color: Colors.red,
-                          height: 1,
-                          fontSize: 14,
-                          fontFamily: 'Roboto'),
-                    ),
+                  child: Builder(
+                      builder: (context) => Center(
+                            child: TextButton(
+                              onPressed: () {
+                                AlertDialog(
+                                  title: Text(
+                                    'Message d\'alerte',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  content: Text(
+                                    'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        color: const Color(0xffABABAC)),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {}, child: Text('Non')),
+                                    TextButton(
+                                        onPressed: () {}, child: Text('oui')),
+                                  ],
+                                  shape: CircleBorder(),
+                                );
+                              },
+                              child: Text(
+                                'Effacer les notifications',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    height: 1,
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto'),
+                              ),
+                            ),
+                          ),
                   ),
                 ),
               ],
             ),
-            Text('Jeudi 21 Janvier . 08:20',style: TextStyle(
-                color: const Color(0xffABABAC),
-                fontSize: 12,
-                fontFamily: 'Roboto'),),
+            Text(
+              'Jeudi 21 Janvier . 08:20',
+              style: TextStyle(
+                  color: const Color(0xffABABAC),
+                  fontSize: 12,
+                  fontFamily: 'Roboto'),
+            ),
             Container(
-
-              padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -105,7 +119,9 @@ class Notifications extends StatelessWidget {
                           fontFamily: 'Roboto'),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
                     'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard',
                     style: TextStyle(
@@ -116,13 +132,15 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            Text('Jeudi 21 Janvier . 08:20',style: TextStyle(
-                color: const Color(0xffABABAC),
-                fontSize: 12,
-                fontFamily: 'Roboto'),),
+            Text(
+              'Jeudi 21 Janvier . 08:20',
+              style: TextStyle(
+                  color: const Color(0xffABABAC),
+                  fontSize: 12,
+                  fontFamily: 'Roboto'),
+            ),
             Container(
-
-              padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -142,7 +160,9 @@ class Notifications extends StatelessWidget {
                           fontFamily: 'Roboto'),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
                     'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard',
                     style: TextStyle(
@@ -153,13 +173,15 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            Text('Jeudi 21 Janvier . 08:20',style: TextStyle(
-                color: const Color(0xffABABAC),
-                fontSize: 12,
-                fontFamily: 'Roboto'),),
+            Text(
+              'Jeudi 21 Janvier . 08:20',
+              style: TextStyle(
+                  color: const Color(0xffABABAC),
+                  fontSize: 12,
+                  fontFamily: 'Roboto'),
+            ),
             Container(
-
-              padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -179,7 +201,9 @@ class Notifications extends StatelessWidget {
                           fontFamily: 'Roboto'),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
                     'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard',
                     style: TextStyle(
@@ -190,13 +214,15 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            Text('Jeudi 21 Janvier . 08:20',style: TextStyle(
-                color: const Color(0xffABABAC),
-                fontSize: 12,
-                fontFamily: 'Roboto'),),
+            Text(
+              'Jeudi 21 Janvier . 08:20',
+              style: TextStyle(
+                  color: const Color(0xffABABAC),
+                  fontSize: 12,
+                  fontFamily: 'Roboto'),
+            ),
             Container(
-
-              padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -216,7 +242,9 @@ class Notifications extends StatelessWidget {
                           fontFamily: 'Roboto'),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
                     'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard',
                     style: TextStyle(
@@ -227,13 +255,15 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            Text('Jeudi 21 Janvier . 08:20',style: TextStyle(
-                color: const Color(0xffABABAC),
-                fontSize: 12,
-                fontFamily: 'Roboto'),),
+            Text(
+              'Jeudi 21 Janvier . 08:20',
+              style: TextStyle(
+                  color: const Color(0xffABABAC),
+                  fontSize: 12,
+                  fontFamily: 'Roboto'),
+            ),
             Container(
-
-              padding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -253,7 +283,9 @@ class Notifications extends StatelessWidget {
                           fontFamily: 'Roboto'),
                     ),
                   ),
-                  SizedBox(height: 10.0,),
+                  SizedBox(
+                    height: 10.0,
+                  ),
                   Text(
                     'Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard',
                     style: TextStyle(
@@ -264,12 +296,9 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-
           ]),
         ),
-
       ),
     );
   }
 }
-

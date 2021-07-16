@@ -24,6 +24,7 @@ import 'package:inscription/mention_legales.dart';
 import 'package:inscription/modifier info.dart';
 import 'package:inscription/Se_connecter.dart';
 import 'package:inscription/terms_conditions.dart';
+import 'package:inscription/splashScreen.dart';
 
 
 
@@ -705,10 +706,10 @@ class Inscription extends StatelessWidget {
                             onPressed: (){
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Notifications()),
+                                MaterialPageRoute(builder: (context) => ZIDSplashScreen()),
                               );
                             },
-                            child: Text('ZID-Notifications',style: TextStyle(color: Colors.white,fontSize: 14),),
+                            child: Text('ZID-SplashScreen',style: TextStyle(color: Colors.white,fontSize: 14),),
                           ),
                         ),
                       ),

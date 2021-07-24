@@ -42,20 +42,22 @@ class Inscription extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
-            child: FittedBox(
-              child: Container(
-                margin: EdgeInsets.fromLTRB(20,20,20,0),
-                child: Column(
-                  children: [
-                    Container(
-                        margin: EdgeInsets.fromLTRB(50,30,50,0),
-                        child: Image(
-                          image: AssetImage('images/icon2.png'),
-                        ),
-                        height: 68.98,
-                        width: 75.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Container(
+              alignment:Alignment.center,
+              //margin: EdgeInsets.fromLTRB(30,20,30,0),
+              child: Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                      margin: EdgeInsets.fromLTRB(50,30,50,0),
+                      child: Image(
+                        image: AssetImage('images/icon2.png'),
+                      ),
+                      height: 68.98,
+                      width: 75.0),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -80,7 +82,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -106,9 +108,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -133,7 +137,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -159,9 +163,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -186,7 +192,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -212,8 +218,10 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
@@ -239,7 +247,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -265,9 +273,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -292,7 +302,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -318,9 +328,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                          width: 150,
@@ -345,7 +357,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -371,9 +383,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -398,7 +412,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -424,8 +438,10 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
@@ -451,7 +467,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -477,9 +493,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -504,7 +522,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -530,9 +548,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -557,7 +577,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -583,9 +603,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -610,7 +632,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -636,9 +658,11 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: 150,
@@ -663,7 +687,7 @@ class Inscription extends StatelessWidget {
                             ),
                           ),
                         ),
-                        //SizedBox(width: 10,),
+                        SizedBox(width: 10,),
                         Container(
                           width: 150,
                           height: 50,
@@ -689,8 +713,10 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20.0,),
-                    Row(
+                  ),
+                  SizedBox(height: 20.0,),
+                  FittedBox(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
@@ -718,8 +744,8 @@ class Inscription extends StatelessWidget {
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

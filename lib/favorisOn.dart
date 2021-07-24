@@ -14,77 +14,77 @@ class FavorisOn extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: FittedBox(
-            child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                            margin: EdgeInsets.only(left: 10.0),
-                            child: Image(
-                              image: AssetImage('images/icon2.png'),
-                            ),
-                            height: 68.98,
-                            width: 75.0),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        Row(
-                          children: [
-                            Stack(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.grey[300],
-                                  ),
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.notifications_none_outlined),
-                                    iconSize: 30,
-                                    color: Colors.black,
-                                  ),
+          child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                          margin: EdgeInsets.only(left: 10.0),
+                          child: Image(
+                            image: AssetImage('images/icon2.png'),
+                          ),
+                          height: 68.98,
+                          width: 75.0),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Row(
+                        children: [
+                          Stack(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.grey[300],
                                 ),
-                                Container(margin:EdgeInsets.fromLTRB(27,13,0,0,),child: SvgPicture.asset('img/point.svg',)),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: const Color(0xffE25033),
+                                child: IconButton(
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.notifications_none_outlined),
+                                  iconSize: 30,
+                                  color: Colors.black,
+                                ),
                               ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.person_outline),
-                                iconSize: 30,
-                                color: Colors.white,
-                              ),
+                              Container(margin:EdgeInsets.fromLTRB(27,13,0,0,),child: SvgPicture.asset('img/point.svg',)),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 10.0,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: const Color(0xffE25033),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.person_outline),
+                              iconSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    padding: EdgeInsets.only(left: 23.0),
-                    child: Text(
-                      'Mes favoris',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          height: 1,
-                          fontSize: 20,
-                          fontFamily: 'Roboto'),
-                    ),
+                ),
+                Container(
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.only(left: 23.0),
+                  child: Text(
+                    'Mes favoris',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        height: 1,
+                        fontSize: 20,
+                        fontFamily: 'Roboto'),
                   ),
-                  SizedBox(height: 30.0,),
-                  Row(
+                ),
+                SizedBox(height: 30.0,),
+                FittedBox(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(children: [
@@ -278,8 +278,10 @@ class FavorisOn extends StatelessWidget {
                               ),),),
                         ],)
                     ],),
-                  SizedBox(height: 30.0,),
-                  Row(
+                ),
+                SizedBox(height: 30.0,),
+                FittedBox(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(children: [
@@ -453,8 +455,10 @@ class FavorisOn extends StatelessWidget {
 
                         ],)
                     ],),
-                  SizedBox(height: 30.0,),
-                  Row(
+                ),
+                SizedBox(height: 30.0,),
+                FittedBox(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Stack(children: [
@@ -650,8 +654,8 @@ class FavorisOn extends StatelessWidget {
                               ),),),
                         ],)
                     ],),
-                ]),
-          ),
+                ),
+              ]),
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(

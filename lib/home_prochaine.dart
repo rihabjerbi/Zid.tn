@@ -4,6 +4,14 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:inscription/home_termine.dart';
+import 'package:inscription/home_encours.dart';
+import 'package:inscription/notifications.dart';
+import 'package:inscription/profil1.dart';
+import 'package:inscription/achat_jetons.dart';
+import 'package:inscription/autres.dart';
+import 'package:inscription/favorisOn.dart';
+import 'package:inscription/encheresOn.dart';
 
 
 class Prochain extends StatelessWidget {
@@ -14,159 +22,175 @@ class Prochain extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: FittedBox(
-            child: Column(children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        margin: EdgeInsets.only(left: 10.0),
-                        child: Image(
-                          image: AssetImage('images/icon2.png'),
-                        ),
-                        height: 68.98,
-                        width: 75.0),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Row(
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.grey[300],
-                              ),
-                              child: IconButton(
-                                onPressed: () {},
-                                icon:
-                                const Icon(Icons.notifications_none_outlined),
-                                iconSize: 30,
-                                color: Colors.black,
-                              ),
-                            ),
-                            Container(
-                                margin: EdgeInsets.fromLTRB(
-                                  27,
-                                  13,
-                                  0,
-                                  0,
-                                ),
-                                child: SvgPicture.asset(
-                                  'img/point.svg',
-                                )),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10.0,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: const Color(0xffE25033),
-                          ),
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.person_outline),
-                            iconSize: 30,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                  child: Stack(
-                    children: [
-                      Image(image: AssetImage('images/image1.png')),
-                      Image(image: AssetImage('images/image.png')),
-                      Container(
-                          margin: EdgeInsets.only(top: 45),
-                          child: Center(
-                              child: Text(
-                                '      La nouvelle façon d\'acheter !\nZid.tn c\'est une plateforme d\'achat\n  pas tout à fait comme les autres',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600),
-                              ))),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(140, 135, 0, 0),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset('img/point.svg'),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            SvgPicture.asset(
-                              'img/point.svg',
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            SvgPicture.asset(
-                              'img/point.svg',
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            SvgPicture.asset(
-                              'img/point.svg',
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            SvgPicture.asset(
-                              'img/point.svg',
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Stack(
+                  Container(
+                      margin: EdgeInsets.only(left: 10.0),
+                      child: Image(
+                        image: AssetImage('images/icon2.png'),
+                      ),
+                      height: 68.98,
+                      width: 75.0),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Row(
                     children: [
+                      Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.grey[300],
+                            ),
+                            child: IconButton(
+                              onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Notifications()),
+                                );
+                              },
+                              icon:
+                              const Icon(FeatherIcons.bell),
+                              iconSize: 25,
+                              color: Colors.black,
+                            ),
+                          ),
+                          Container(
+                              margin: EdgeInsets.fromLTRB(
+                                27,
+                                13,
+                                0,
+                                0,
+                              ),
+                              child: SvgPicture.asset(
+                                'img/point.svg',
+                              )),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 10.0,
+                      ),
                       Container(
-                        margin: EdgeInsets.only(left: 11),
-                        width: 48,
-                        height: 48,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0x4d30a6ca),
+                          color: const Color(0xffE25033),
                         ),
-                        child: Text(
-                          '',
+                        child: IconButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Profil1()),
+                            );
+                          },
+                          icon: const Icon(Ionicons.person_outline),
+                          iconSize: 25,
+                          color: Colors.white,
                         ),
                       ),
-                      Container(
-                          padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                          child: Text(
-                            'Prochaines',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14,
-                                fontFamily: 'Roboto',
-                                color: Color(0xff30A6CA)),
-                          )),
                     ],
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
+                ],
+              ),
+            ),
+            Container(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                child: Stack(
+                  children: [
+                    Image(image: AssetImage('images/image1.png')),
+                    Image(image: AssetImage('images/image.png')),
+                    Container(
+                        margin: EdgeInsets.only(top: 45),
+                        child: Center(
+                            child: Text(
+                              '      La nouvelle façon d\'acheter !\nZid.tn c\'est une plateforme d\'achat\n  pas tout à fait comme les autres',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600),
+                            ))),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(140, 135, 0, 0),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset('img/point.svg'),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SvgPicture.asset(
+                            'img/point.svg',
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SvgPicture.asset(
+                            'img/point.svg',
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SvgPicture.asset(
+                            'img/point.svg',
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SvgPicture.asset(
+                            'img/point.svg',
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 11),
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0x4d30a6ca),
+                      ),
+                      child: Text(
+                        '',
+                      ),
+                    ),
+                    Container(
+                        padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                        child: Text(
+                          'Prochaines',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              fontFamily: 'Roboto',
+                              color: Color(0xff30A6CA)),
+                        )),
+                  ],
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                TextButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Encours()),
+                    );
+                  },
+                  child: Text(
                     'En cours',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -174,10 +198,18 @@ class Prochain extends StatelessWidget {
                         fontFamily: 'Roboto',
                         color: Color(0x59333333)),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                TextButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Termines()),
+                    );
+                  },
+                  child: Text(
                     'Terminés',
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
@@ -185,12 +217,14 @@ class Prochain extends StatelessWidget {
                         fontFamily: 'Roboto',
                         color: Color(0x59333333)),
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Row(
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            FittedBox(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Stack(
@@ -379,6 +413,9 @@ class Prochain extends StatelessWidget {
                               ],
                             ),
                           ),
+                          SizedBox(
+                            width: 55.0,
+                          ),
 
                           RichText(
                             text: TextSpan(
@@ -409,60 +446,59 @@ class Prochain extends StatelessWidget {
                         height: 71,
                         //width: 230,
                         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color(0x08000000)),
                         child: Row(
                           children: [
-                            Column(
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Achetez directement et gagner\n',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                          text: '279DT',
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Achetez directement et gagner\n',
                                           style: TextStyle(
-                                            color: Color(0xffFE4B28),
+                                            color: Color(0xff666666),
                                             fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      TextSpan(
-                                        text: ' de remise',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        TextSpan(
+                                            text: '279DT',
+                                            style: TextStyle(
+                                              color: Color(0xffFE4B28),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        TextSpan(
+                                          text: ' de remise',
+                                          style: TextStyle(
+                                            color: Color(0xff666666),
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Container(
-                                    alignment: Alignment.topRight,
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    //width: 90,
-                                    height: 21,
-                                    child: Image(
-                                      image: AssetImage('images/cyberio.png'),
-                                    )),
-                              ],
+                                  SizedBox(
+                                    height: 2,
+                                  ),
+                                  Container(
+                                      child: Image(
+                                        image: AssetImage('images/cyberio.png'),
+                                      )),
+                                ],
+                              ),
                             ),
                             Container(
-                                margin: EdgeInsets.fromLTRB(10, 5, 0, 30),
+                                margin: EdgeInsets.fromLTRB(10,0, 0, 0),
                                 child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                        Ionicons.arrow_forward_circle_outline)))
+                                  onPressed: () {},
+                                  icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),))
                           ],
                         ),
                       ),
@@ -499,10 +535,12 @@ class Prochain extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Row(
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            FittedBox(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Stack(
@@ -654,7 +692,7 @@ class Prochain extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text(
-                        'REDMI 7A BLACK',
+                        'REDMI 7A BLACK                      ',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -686,9 +724,7 @@ class Prochain extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(
-                            width: 55.0,
-                          ),
+                          SizedBox(width: 90.0,),
                           RichText(
                             text: TextSpan(
                               children: [
@@ -718,60 +754,63 @@ class Prochain extends StatelessWidget {
                         height: 71,
                         width: 230,
                         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color(0x08000000)),
                         child: Row(
                           children: [
-                            Column(
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Achetez directement et gagner\n',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                          text: '40DT',
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Achetez directement et gagner\n',
                                           style: TextStyle(
-                                            color: Color(0xffFE4B28),
+                                            color: Color(0xff666666),
                                             fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      TextSpan(
-                                        text: ' de remise',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        TextSpan(
+                                            text: '40DT',
+                                            style: TextStyle(
+                                              color: Color(0xffFE4B28),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        TextSpan(
+                                          text: ' de remise',
+                                          style: TextStyle(
+                                            color: Color(0xff666666),
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Container(
-                                    alignment: Alignment.topRight,
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    width: 90,
-                                    height: 21,
-                                    child: Image(
-                                      image: AssetImage('images/cyberio.png'),
-                                    )),
-                              ],
+                                  SizedBox(
+                                    height: 2,
+                                  ),
+                                  Container(
+                                      alignment: Alignment.topRight,
+                                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                      width: 90,
+                                      height: 21,
+                                      child: Image(
+                                        image: AssetImage('images/cyberio.png'),
+                                      )),
+                                ],
+                              ),
                             ),
                             Container(
-                                margin: EdgeInsets.fromLTRB(10, 5, 0, 30),
+                                margin: EdgeInsets.fromLTRB(10,0, 0, 0),
                                 child: IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                        Ionicons.arrow_forward_circle_outline)))
+                                  onPressed: () {},
+                                  icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),))
                           ],
                         ),
                       ),
@@ -808,29 +847,31 @@ class Prochain extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Stack(
-                children: [
-                  Image(image: AssetImage('images/nidhal.png')),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(10, 150, 0, 0),
-                    alignment: Alignment.center,
-                    width: 75,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffFFE600)
-                    ),
-                    child: Text('Publicité',style: TextStyle(color: Colors.black,fontSize: 14),),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              Row(
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Stack(
+              children: [
+                Image(image: AssetImage('images/nidhal.png')),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 150, 0, 0),
+                  alignment: Alignment.center,
+                  width: 75,
+                  height: 30,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xffFFE600)
+                  ),
+                  child: Text('Publicité',style: TextStyle(color: Colors.black,fontSize: 14),),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            FittedBox(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Stack(
@@ -981,7 +1022,7 @@ class Prochain extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text(
-                        'REDMI 7A BLACK',
+                        'REDMI 7A BLACK                    ',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -1045,60 +1086,63 @@ class Prochain extends StatelessWidget {
                         height: 71,
                         width: 230,
                         margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                        padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color(0x08000000)),
                         child: Row(
                           children: [
-                            Column(
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Achetez directement et gagner\n',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      TextSpan(
-                                          text: '40DT',
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: 'Achetez directement et gagner\n',
                                           style: TextStyle(
-                                            color: Color(0xffFE4B28),
+                                            color: Color(0xff666666),
                                             fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                          )),
-                                      TextSpan(
-                                        text: ' de remise',
-                                        style: TextStyle(
-                                          color: Color(0xff666666),
-                                          fontSize: 12,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                        TextSpan(
+                                            text: '40DT',
+                                            style: TextStyle(
+                                              color: Color(0xffFE4B28),
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                            )),
+                                        TextSpan(
+                                          text: ' de remise',
+                                          style: TextStyle(
+                                            color: Color(0xff666666),
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 2,
-                                ),
-                                Container(
-                                    alignment: Alignment.topRight,
-                                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    width: 90,
-                                    height: 21,
-                                    child: Image(
-                                      image: AssetImage('images/cyberio.png'),
-                                    )),
-                              ],
+                                  SizedBox(
+                                    height: 2,
+                                  ),
+                                  Container(
+                                      alignment: Alignment.topRight,
+                                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                      width: 90,
+                                      height: 21,
+                                      child: Image(
+                                        image: AssetImage('images/cyberio.png'),
+                                      )),
+                                ],
+                              ),
                             ),
                             Container(
-                                margin: EdgeInsets.fromLTRB(10, 5, 0, 30),
+                               margin: EdgeInsets.fromLTRB(10,0, 0, 0),
                                 child: IconButton(
                                     onPressed: () {},
-                                    icon: Icon(
-                                        Ionicons.arrow_forward_circle_outline)))
+                                    icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),))
                           ],
                         ),
                       ),
@@ -1135,11 +1179,11 @@ class Prochain extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-            ]),
-          ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+          ]),
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
@@ -1186,9 +1230,17 @@ class Prochain extends StatelessWidget {
                 BottomNavigationBarItem(
                   icon: Stack(
                     children: [
-                      SvgPicture.asset(
-                        'img/gavel.svg',
-                        color: Colors.black,
+                      IconButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => EncheresOn()),
+                          );
+                        },
+                        icon: SvgPicture.asset(
+                          'img/gavel.svg',
+                          color: Colors.black,
+                        ),
                       ),
                       Container(
                           margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -1197,7 +1249,7 @@ class Prochain extends StatelessWidget {
                           )),
                     ],
                   ),
-                  label: ' ',
+                  label: 'Encheres',
                   //backgroundColor: Colors.white,
                 ),
                 BottomNavigationBarItem(
@@ -1216,19 +1268,41 @@ class Prochain extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: Color(0xffE25033),
                     ),
-                    child: Icon(
-                      FeatherIcons.shoppingCart,
-                      color: Colors.white,
+                    child: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AchatJetons()),
+                        );
+                      },
+                      icon: Icon(
+                        FeatherIcons.shoppingCart,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   label: 'Shop',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Ionicons.heart_outline),
+                  icon: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FavorisOn()),
+                        );
+                      },
+                      icon: Icon(Ionicons.heart_outline)),
                   label: 'Favorite',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.bars),
+                  icon: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Autres()),
+                        );
+                      },
+                      icon: Icon(FontAwesomeIcons.bars)),
                   label: 'Menu',
                 ),
               ],

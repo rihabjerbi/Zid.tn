@@ -3,8 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:inscription/achat_jetons.dart';
+import 'package:inscription/autres.dart';
+import 'package:inscription/favorisOn.dart';
 import 'package:ionicons/ionicons.dart';
-
+import 'package:inscription/home_encours.dart';
+import 'package:inscription/home_prochaine.dart';
+import 'package:inscription/notifications.dart';
+import 'package:inscription/profil1.dart';
+import 'package:inscription/encheresOn.dart';
 
 
 class Termines extends StatelessWidget {
@@ -15,79 +22,95 @@ class Termines extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: FittedBox(
-            child: Container(
-              //margin: EdgeInsets.all(10),
-              child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.only(left: 10.0),
-                              child: Image(
-                                image: AssetImage('images/icon2.png'),
-                              ),
-                              height: 68.98,
-                              width: 75.0),
-                          SizedBox(
-                            width: 10.0,
-                          ),
-                          Row(
-                            children: [
-                              Stack(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Colors.grey[300],
-                                    ),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon:
-                                      const Icon(Icons.notifications_none_outlined),
-                                      iconSize: 30,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  Container(
-                                      margin: EdgeInsets.fromLTRB(
-                                        27,
-                                        13,
-                                        0,
-                                        0,
-                                      ),
-                                      child: SvgPicture.asset(
-                                        'img/point.svg',
-                                      )),
-                                ],
-                              ),
-                              SizedBox(
-                                width: 10.0,
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: const Color(0xffE25033),
-                                ),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Icons.person_outline),
-                                  iconSize: 30,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+          child: Container(
+            //margin: EdgeInsets.all(10),
+            child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        Container(
+                            margin: EdgeInsets.only(left: 10.0),
+                            child: Image(
+                              image: AssetImage('images/icon2.png'),
+                            ),
+                            height: 68.98,
+                            width: 75.0),
+                        SizedBox(
+                          width: 10.0,
+                        ),
+                        Row(
+                          children: [
+                            Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.grey[300],
+                                  ),
+                                  child: IconButton(
+                                    onPressed: (){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => Notifications()),
+                                      );
+                                    },
+                                    icon:
+                                    const Icon(FeatherIcons.bell),
+                                    iconSize: 25,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Container(
+                                    margin: EdgeInsets.fromLTRB(
+                                      27,
+                                      13,
+                                      0,
+                                      0,
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'img/point.svg',
+                                    )),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: const Color(0xffE25033),
+                              ),
+                              child: IconButton(
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => Profil1()),
+                                  );
+                                },
+                                icon: const Icon(Ionicons.person_outline),
+                                iconSize: 25,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Prochain()),
+                          );
+                        },
+                        child: Text(
                           'Prochaines',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
@@ -95,10 +118,18 @@ class Termines extends StatelessWidget {
                               fontFamily: 'Roboto',
                               color: Color(0x59333333)),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Text(
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Encours()),
+                          );
+                        },
+                        child: Text(
                           'En cours',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
@@ -106,25 +137,33 @@ class Termines extends StatelessWidget {
                               fontFamily: 'Roboto',
                               color: Color(0x59333333)),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Stack(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(left: 5),
-                              width: 48,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color(0x4d30a6ca),
-                              ),
-                              child: Text(
-                                '',
-                              ),
+                      ),
+                      SizedBox(
+                        width:15,
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 13),
+                            width: 48,
+                            height: 48,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0x4d30a6ca),
                             ),
-                            Container(
-                                padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                            child: Text(
+                              '',
+                            ),
+                          ),
+                          Container(
+                             // padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                              child: TextButton(
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => Termines()),
+                                  );
+                                },
                                 child: Text(
                                   'Terminés',
                                   style: TextStyle(
@@ -132,16 +171,208 @@ class Termines extends StatelessWidget {
                                       fontSize: 14,
                                       fontFamily: 'Roboto',
                                       color: Color(0xff30A6CA)),
-                                )),
-                          ],
+                                ),
+                              )),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+
+                  FittedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(children: [
+                          Container(
+                            height: 151,
+                            width: 122,
+                            decoration: BoxDecoration(
+                              boxShadow: <BoxShadow>[
+                                BoxShadow(
+                                  color: const Color(0x8030a6ca),
+                                  blurRadius: 10,
+                                  spreadRadius: 2,
+                                  offset: Offset.zero,
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: <Color>[
+                                  const Color(0xff30A6CA),
+                                  const Color(0xffFFF0E5),
+                                ],
+                              ),
+                            ),
+                            child: Text(''),
+                          ),
+                          Container(
+                              margin: EdgeInsets.fromLTRB(19, 20, 0, 20),
+                              child: Image(image: AssetImage('images/jbl.png'))),
+                          Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
+                            width: 122,
+                            height: 40,
+                            color: Color(0xffE25033),
+                            child: RichText(
+                                text:TextSpan(children: [
+                                  TextSpan(text: '  Remporté à\n', style: TextStyle(fontSize: 10,color: Colors.white)),
+                                  TextSpan(text: '141.60 DT',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.white)),
+                                ])
+                            ),
+                          ),
+                        ],),
+                        Column(
+                          children: [
+                            Text('JBL FLIP4                                    ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                            Container(
+                              //margin: EdgeInsets.fromLTRB(10,0,0,0),
+                              //padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                              child: RichText(text: TextSpan(
+                                children: [
+                                  TextSpan(text: 'Remporté par ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: 'Zizou2001                            \n', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,)),
+                                  TextSpan(text: 'à ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: '141.60 Dt ', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,fontWeight: FontWeight.bold,)),
+                                  TextSpan(text: 'au lieu de ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: '549 Dt', style: TextStyle(color: Color(0xff000000),fontSize: 12,decoration: TextDecoration.lineThrough),),
+                                ],
+                              ),),
+                            ),
+                            SizedBox(height: 10.0,),
+                            Container(
+                              margin: EdgeInsets.only(left: 10.0),
+                              width: 230,
+                              height: 41,
+                              decoration:BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.black),
+                                color: Colors.white,
+                              ) ,
+                              child: TextButton(onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset('img/share.svg'),
+                                    SizedBox(width: 10,),
+                                    Text('Partager',style: TextStyle(fontSize: 14,color: Colors.black,),),
+                                  ],
+                                ),),),
+                            SizedBox(height: 80,)
+                          ],)
+                      ],),
+                  ),
+
+                  FittedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Stack(children: [
+                          Container(
+                            height: 151,
+                            width: 122,
+                            decoration: BoxDecoration(
+                              boxShadow: <BoxShadow>[
+                                BoxShadow(
+                                  color: const Color(0x8030a6ca),
+                                  blurRadius: 10,
+                                  spreadRadius: 2,
+                                  offset: Offset.zero,
+                                ),
+                              ],
+                              borderRadius: BorderRadius.circular(10),
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomCenter,
+                                end: Alignment.topCenter,
+                                colors: <Color>[
+                                  const Color(0xff30A6CA),
+                                  const Color(0xffFFF0E5),
+                                ],
+                              ),
+                            ),
+                            child: Text(''),
+                          ),
+                          Container(
+                              margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
+                              child: Image(image: AssetImage('images/watch.png'))),
+                          Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.fromLTRB(0, 78, 0, 0),
+                            width: 122,
+                            height: 40,
+                            color: Color(0xffE25033),
+                            child: RichText(
+                                text:TextSpan(children: [
+                                  TextSpan(text: '  Remporté à\n', style: TextStyle(fontSize: 10,color: Colors.white)),
+                                  TextSpan(text: '141.60 DT',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.white)),
+                                ])
+                            ),
+                          ),
+                        ],),
+                        Column(
+                          children: [
+                            Text('HUAWEI SMART WATCH GT2  ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
+                            Container(
+                              //margin: EdgeInsets.fromLTRB(10,0,0,0),
+                              //padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                              child: RichText(text: TextSpan(
+                                children: [
+                                  TextSpan(text: 'Remporté par ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: 'Foulen                                   \n', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,)),
+                                  TextSpan(text: 'à ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: '141.60 Dt ', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,fontWeight: FontWeight.bold,)),
+                                  TextSpan(text: 'au lieu de ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
+                                  TextSpan(text: '549 Dt', style: TextStyle(color: Color(0xff000000),fontSize: 12,decoration: TextDecoration.lineThrough),),
+                                ],
+                              ),),
+                            ),
+                            SizedBox(height: 10.0,),
+                            Container(
+                              margin: EdgeInsets.only(left: 10.0),
+                              width: 230,
+                              height: 41,
+                              decoration:BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.black),
+                                color: Colors.white,
+                              ) ,
+                              child: TextButton(onPressed: () {},
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset('img/share.svg'),
+                                    SizedBox(width: 10,),
+                                    Text('Partager',style: TextStyle(fontSize: 14,color: Colors.black,),),
+                                  ],
+                                ),),),
+                            SizedBox(height: 80,)
+                          ],)
+                      ],),
+                  ),
+                  Stack(
+                    children: [
+                      Image(image: AssetImage('images/tv.png')),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(8, 140, 0, 0),
+                        alignment: Alignment.center,
+                        width: 75,
+                        height: 30,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffFFE600)
                         ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-
-                    Row(
+                        child: Text('Publicité',style: TextStyle(color: Colors.black,fontSize: 14),),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 40.0,),
+                  FittedBox(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Stack(children: [
@@ -225,8 +456,10 @@ class Termines extends StatelessWidget {
                             SizedBox(height: 80,)
                           ],)
                       ],),
+                  ),
 
-                    Row(
+                  FittedBox(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Stack(children: [
@@ -310,195 +543,9 @@ class Termines extends StatelessWidget {
                             SizedBox(height: 80,)
                           ],)
                       ],),
-                    Stack(
-                      children: [
-                        Image(image: AssetImage('images/tv.png')),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(8, 140, 0, 0),
-                          alignment: Alignment.center,
-                          width: 75,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xffFFE600)
-                          ),
-                          child: Text('Publicité',style: TextStyle(color: Colors.black,fontSize: 14),),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 40.0,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Stack(children: [
-                          Container(
-                            height: 151,
-                            width: 122,
-                            decoration: BoxDecoration(
-                              boxShadow: <BoxShadow>[
-                                BoxShadow(
-                                  color: const Color(0x8030a6ca),
-                                  blurRadius: 10,
-                                  spreadRadius: 2,
-                                  offset: Offset.zero,
-                                ),
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                                colors: <Color>[
-                                  const Color(0xff30A6CA),
-                                  const Color(0xffFFF0E5),
-                                ],
-                              ),
-                            ),
-                            child: Text(''),
-                          ),
-                          Container(
-                              margin: EdgeInsets.fromLTRB(19, 20, 0, 20),
-                              child: Image(image: AssetImage('images/jbl.png'))),
-                          Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
-                            width: 122,
-                            height: 40,
-                            color: Color(0xffE25033),
-                            child: RichText(
-                                text:TextSpan(children: [
-                                  TextSpan(text: '  Remporté à\n', style: TextStyle(fontSize: 10,color: Colors.white)),
-                                  TextSpan(text: '141.60 DT',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.white)),
-                                ])
-                            ),
-                          ),
-                        ],),
-                        Column(
-                          children: [
-                            Text('JBL FLIP4                                    ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                            Container(
-                              //margin: EdgeInsets.fromLTRB(10,0,0,0),
-                              //padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
-                              child: RichText(text: TextSpan(
-                                children: [
-                                  TextSpan(text: 'Remporté par ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: 'Zizou2001                            \n', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,)),
-                                  TextSpan(text: 'à ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: '141.60 Dt ', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,fontWeight: FontWeight.bold,)),
-                                  TextSpan(text: 'au lieu de ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: '549 Dt', style: TextStyle(color: Color(0xff000000),fontSize: 12,decoration: TextDecoration.lineThrough),),
-                                ],
-                              ),),
-                            ),
-                            SizedBox(height: 10.0,),
-                            Container(
-                              margin: EdgeInsets.only(left: 10.0),
-                              width: 230,
-                              height: 41,
-                              decoration:BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Colors.black),
-                                color: Colors.white,
-                              ) ,
-                              child: TextButton(onPressed: () {},
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SvgPicture.asset('img/share.svg'),
-                                    SizedBox(width: 10,),
-                                    Text('Partager',style: TextStyle(fontSize: 14,color: Colors.black,),),
-                                  ],
-                                ),),),
-                            SizedBox(height: 80,)
-                          ],)
-                      ],),
+                  ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Stack(children: [
-                          Container(
-                            height: 151,
-                            width: 122,
-                            decoration: BoxDecoration(
-                              boxShadow: <BoxShadow>[
-                                BoxShadow(
-                                  color: const Color(0x8030a6ca),
-                                  blurRadius: 10,
-                                  spreadRadius: 2,
-                                  offset: Offset.zero,
-                                ),
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: LinearGradient(
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                                colors: <Color>[
-                                  const Color(0xff30A6CA),
-                                  const Color(0xffFFF0E5),
-                                ],
-                              ),
-                            ),
-                            child: Text(''),
-                          ),
-                          Container(
-                              margin: EdgeInsets.fromLTRB(0, 40, 0, 30),
-                              child: Image(image: AssetImage('images/watch.png'))),
-                          Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.fromLTRB(0, 78, 0, 0),
-                            width: 122,
-                            height: 40,
-                            color: Color(0xffE25033),
-                            child: RichText(
-                                text:TextSpan(children: [
-                                  TextSpan(text: '  Remporté à\n', style: TextStyle(fontSize: 10,color: Colors.white)),
-                                  TextSpan(text: '141.60 DT',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14,color: Colors.white)),
-                                ])
-                            ),
-                          ),
-                        ],),
-                        Column(
-                          children: [
-                            Text('HUAWEI SMART WATCH GT2  ',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600,fontFamily: 'Roboto'),),
-                            Container(
-                              //margin: EdgeInsets.fromLTRB(10,0,0,0),
-                              //padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
-                              child: RichText(text: TextSpan(
-                                children: [
-                                  TextSpan(text: 'Remporté par ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: 'Foulen                                   \n', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,)),
-                                  TextSpan(text: 'à ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: '141.60 Dt ', style: TextStyle(color: Color(0xffFE4B28),fontSize: 12,fontWeight: FontWeight.bold,)),
-                                  TextSpan(text: 'au lieu de ', style: TextStyle(color: Color(0xff666666),fontSize: 12,),),
-                                  TextSpan(text: '549 Dt', style: TextStyle(color: Color(0xff000000),fontSize: 12,decoration: TextDecoration.lineThrough),),
-                                ],
-                              ),),
-                            ),
-                            SizedBox(height: 10.0,),
-                            Container(
-                              margin: EdgeInsets.only(left: 10.0),
-                              width: 230,
-                              height: 41,
-                              decoration:BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Colors.black),
-                                color: Colors.white,
-                              ) ,
-                              child: TextButton(onPressed: () {},
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SvgPicture.asset('img/share.svg'),
-                                    SizedBox(width: 10,),
-                                    Text('Partager',style: TextStyle(fontSize: 14,color: Colors.black,),),
-                                  ],
-                                ),),),
-                            SizedBox(height: 80,)
-                          ],)
-                      ],),
-
-                  ]),
-            ),
+                ]),
           ),
         ),
         bottomNavigationBar: Container(
@@ -546,9 +593,17 @@ class Termines extends StatelessWidget {
                 BottomNavigationBarItem(
                   icon: Stack(
                     children: [
-                      SvgPicture.asset(
-                        'img/gavel.svg',
-                        color: Colors.black,
+                      IconButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => EncheresOn()),
+                          );
+                        },
+                        icon: SvgPicture.asset(
+                          'img/gavel.svg',
+                          color: Colors.black,
+                        ),
                       ),
                       Container(
                           margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -557,7 +612,7 @@ class Termines extends StatelessWidget {
                           )),
                     ],
                   ),
-                  label: ' ',
+                  label: 'Encheres',
                   //backgroundColor: Colors.white,
                 ),
                 BottomNavigationBarItem(
@@ -576,19 +631,41 @@ class Termines extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: Color(0xffE25033),
                     ),
-                    child: Icon(
-                      FeatherIcons.shoppingCart,
-                      color: Colors.white,
+                    child: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AchatJetons()),
+                        );
+                      },
+                      icon: Icon(
+                        FeatherIcons.shoppingCart,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   label: 'Shop',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Ionicons.heart_outline),
+                  icon: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FavorisOn()),
+                        );
+                      },
+                      icon: Icon(Ionicons.heart_outline)),
                   label: 'Favorite',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.bars),
+                  icon: IconButton(
+                      onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Autres()),
+                        );
+                      },
+                      icon: Icon(FontAwesomeIcons.bars)),
                   label: 'Menu',
                 ),
               ],

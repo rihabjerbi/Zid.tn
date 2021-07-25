@@ -41,7 +41,9 @@ class DetailsProduit extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: const Color(0x31000000)),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             icon: Icon(
                               Icons.arrow_back_ios,
                               size: 25,
@@ -370,6 +372,7 @@ class DetailsProduit extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                SizedBox(width: 10,),
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                       vertical: 0, horizontal: 25),
@@ -441,63 +444,68 @@ class DetailsProduit extends StatelessWidget {
                           ),
                           Container(
                             width: 366,
-                            padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Color(0x08000000)),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Column(
-                                  children: [
-                                    RichText(
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text:
-                                            'Achetez directement et gagner\n',
-                                            style: TextStyle(
-                                              color: Color(0xff666666),
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          TextSpan(
-                                              text: '279DT',
+                                Container(
+                                  padding: EdgeInsets.fromLTRB(8, 8, 0, 0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                              'Achetez directement et gagner\n',
                                               style: TextStyle(
-                                                color: Color(0xffFE4B28),
+                                                color: Color(0xff666666),
                                                 fontSize: 12,
-                                                fontWeight: FontWeight.bold,
-                                              )),
-                                          TextSpan(
-                                            text: ' de remise',
-                                            style: TextStyle(
-                                              color: Color(0xff666666),
-                                              fontSize: 12,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                            TextSpan(
+                                                text: '279DT',
+                                                style: TextStyle(
+                                                  color: Color(0xffFE4B28),
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                            TextSpan(
+                                              text: ' de remise',
+                                              style: TextStyle(
+                                                color: Color(0xff666666),
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 2,
-                                    ),
-                                    Container(
-                                        width: 90,
-                                        height: 21,
-                                        child: Image(
-                                          image:
-                                          AssetImage('images/cyberio.png'),
-                                        )),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                  ],
+                                      SizedBox(
+                                        height: 2,
+                                      ),
+                                      Container(
+                                          width: 90,
+                                          height: 21,
+                                          child: Image(
+                                            image:
+                                            AssetImage('images/cyberio.png'),
+                                          )),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                    ],
 
+                                  ),
                                 ),
                                 Container(
+                                    margin: EdgeInsets.fromLTRB(10,0, 0, 0),
                                     child: IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(Ionicons.arrow_forward_circle_outline)))
+                                      onPressed: () {},
+                                      icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),)),
                               ],
                             ),
                           ),

@@ -41,7 +41,9 @@ class EncheresEndirect extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: const Color(0x31000000)),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             icon: Icon(
                               Icons.arrow_back_ios,
                               size: 25,

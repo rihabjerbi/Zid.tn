@@ -9,7 +9,12 @@ import 'package:inscription/comment_ca_marche.dart';
 import 'package:inscription/info_securite.dart';
 import 'package:inscription/terms_conditions.dart';
 import 'package:inscription/mention_legales.dart';
-
+import 'package:inscription/profil1.dart';
+import 'package:inscription/notifications.dart';
+import 'package:inscription/achat_jetons.dart';
+import 'package:inscription/favorisOn.dart';
+import 'package:inscription/encheresOn.dart';
+import 'package:inscription/home_prochaine.dart';
 
 class Autres extends StatelessWidget {
   const Autres({Key? key}) : super(key: key);
@@ -22,7 +27,7 @@ class Autres extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 10.0),
+                padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,13 +51,28 @@ class Autres extends StatelessWidget {
                                 color: Colors.grey[300],
                               ),
                               child: IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.notifications_none_outlined),
-                                iconSize: 30,
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => Notifications()),
+                                  );
+                                },
+                                icon:
+                                const Icon(FeatherIcons.bell),
+                                iconSize: 25,
                                 color: Colors.black,
                               ),
                             ),
-                            Container(margin:EdgeInsets.fromLTRB(27,13,0,0,),child: SvgPicture.asset('img/point.svg',)),
+                            Container(
+                                margin: EdgeInsets.fromLTRB(
+                                  27,
+                                  13,
+                                  0,
+                                  0,
+                                ),
+                                child: SvgPicture.asset(
+                                  'img/point.svg',
+                                )),
                           ],
                         ),
                         SizedBox(
@@ -64,9 +84,14 @@ class Autres extends StatelessWidget {
                             color: const Color(0xffE25033),
                           ),
                           child: IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.person_outline),
-                            iconSize: 30,
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Profil1()),
+                              );
+                            },
+                            icon: const Icon(Ionicons.person_outline),
+                            iconSize: 25,
                             color: Colors.white,
                           ),
                         ),
@@ -383,14 +408,28 @@ class Autres extends StatelessWidget {
               child: BottomNavigationBar(
                 items: [
                   BottomNavigationBarItem(
-                    icon: SvgPicture.asset('img/Accueil.svg',color: Colors.black,),
+                    icon: IconButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Prochain()),
+                          );
+                        },
+                        icon: SvgPicture.asset('img/Accueil.svg',color: Colors.black,)),
                     label: 'Accueil',
                   ),
                   BottomNavigationBarItem(
                     icon: Stack(
                       children: [
-                        SvgPicture.asset('img/gavel.svg',color: Colors.black,),
-                        Container(margin:EdgeInsets.fromLTRB(20,0,0,0),child: SvgPicture.asset('img/point.svg',)),
+                        IconButton(
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => EncheresOn()),
+                              );
+                            },
+                            icon: SvgPicture.asset('img/gavel.svg',color: Colors.black,)),
+                        Container(margin:EdgeInsets.fromLTRB(31,12,0,0),child: SvgPicture.asset('img/point.svg',)),
 
                       ],
                     ),
@@ -404,7 +443,6 @@ class Autres extends StatelessWidget {
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-
                             color: const Color(0x85e25033),
                             blurRadius: 10,
                             spreadRadius: 5.0,
@@ -413,11 +451,25 @@ class Autres extends StatelessWidget {
                         ],
                         shape: BoxShape.circle,
                         color: Color(0xffE25033),),
-                      child: Icon(FeatherIcons.shoppingCart,color: Colors.white,),),
+                      child: IconButton(
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => AchatJetons()),
+                            );
+                          },
+                          icon: Icon(FeatherIcons.shoppingCart,color: Colors.white,)),),
                     label: 'Shop',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Ionicons.heart_outline),
+                    icon: IconButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => FavorisOn()),
+                          );
+                        },
+                        icon: Icon(Ionicons.heart_outline)),
                     label: 'Favorite',
                   ),
                   BottomNavigationBarItem(

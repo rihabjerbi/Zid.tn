@@ -2,10 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:inscription/Se_connecter.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
-import 'package:inscription/Se_connecter.dart';
 
-class Inscriptions extends StatelessWidget {
+
+class Inscriptions extends StatefulWidget {
+  const Inscriptions({Key? key}) : super(key: key);
+
+  @override
+  _InscriptionsState createState() => _InscriptionsState();
+}
+
+class _InscriptionsState extends State<Inscriptions> {
+  String email='';
+  String password='';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,10 +29,10 @@ class Inscriptions extends StatelessWidget {
                   children: [
                     Container(
                       child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back_ios,
-                            color: Colors.black,
-                          ),
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                        ),
                         onPressed: () {
                           Navigator.pop(context);
                         },),
@@ -153,6 +161,10 @@ class Inscriptions extends StatelessWidget {
                               ),
                             ),
                             subtitle: TextField(
+                              keyboardType: TextInputType.emailAddress,
+                              onChanged: (value) {
+                                email = value;
+                              },
                               decoration: (InputDecoration(
                                 hintText: 'FBFoulen@gmail.com',
                                 hintStyle: TextStyle(fontSize: 14.0, color: Colors.black),
@@ -178,28 +190,28 @@ class Inscriptions extends StatelessWidget {
                                 textAlign: TextAlign.left,
                               ),
                             ),
-                            subtitle: Row(
-                              children: [
-                                Container(
-                                  width: 50.0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(5.0,5.0,2.0,5.0),
-                                    child: TextField(
-                                      decoration: (InputDecoration(
-                                        hintText: '+216',
-                                        hintStyle: TextStyle(fontSize: 14.0, color: Colors.black),
-                                      )),
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto',
-                                        fontSize: 14,
-                                        color: const Color(0xff000000),
+                            subtitle: FittedBox(
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 50.0,
+                                    child: Padding(
+                                      padding: const EdgeInsets.fromLTRB(5.0,5.0,2.0,5.0),
+                                      child: TextField(
+                                        decoration: (InputDecoration(
+                                          hintText: '+216',
+                                          hintStyle: TextStyle(fontSize: 14.0, color: Colors.black),
+                                        )),
+                                        style: TextStyle(
+                                          fontFamily: 'Roboto',
+                                          fontSize: 14,
+                                          color: const Color(0xff000000),
+                                        ),
+                                        textAlign: TextAlign.left,
                                       ),
-                                      textAlign: TextAlign.left,
                                     ),
                                   ),
-                                ),
-                                FittedBox(
-                                  child: Container(
+                                  Container(
                                     width: 232.0,
                                     child: Padding(
                                       padding: const EdgeInsets.fromLTRB(2.0,5.0,5.0,5.0),
@@ -217,8 +229,8 @@ class Inscriptions extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           ListTile(
@@ -267,6 +279,9 @@ class Inscriptions extends StatelessWidget {
                               ),
                             ),
                             subtitle: TextField(
+                              onChanged:(value){
+                                password=value;
+                            },
                               obscureText: true,
                               decoration: (InputDecoration(
                                 hintText: 'xxxxxxxxx',
@@ -409,7 +424,9 @@ class Inscriptions extends StatelessWidget {
                               primary: Colors.white,
                               textStyle: const TextStyle(fontSize: 20),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              //print(email);
+                            },
                             child: Center(
                               child: const Text(
                                 'S\'inscrire',
@@ -475,3 +492,8 @@ class Inscriptions extends StatelessWidget {
     );
   }
 }
+
+
+
+
+

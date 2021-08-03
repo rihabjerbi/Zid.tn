@@ -14,8 +14,15 @@ import 'package:inscription/favorisOn.dart';
 import 'package:inscription/encheresOn.dart';
 
 
-class Prochain extends StatelessWidget {
+class Prochain extends StatefulWidget {
   const Prochain({Key? key}) : super(key: key);
+
+  @override
+  _ProchainState createState() => _ProchainState();
+}
+
+class _ProchainState extends State<Prochain> {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -1142,10 +1149,10 @@ class Prochain extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                 margin: EdgeInsets.fromLTRB(10,0, 0, 0),
+                                  margin: EdgeInsets.fromLTRB(10,0, 0, 0),
                                   child: IconButton(
-                                      onPressed: () {},
-                                      icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),))
+                                    onPressed: () {},
+                                    icon: SvgPicture.asset('img/arrow.svg', height: 20 , width: 20,),))
                             ],
                           ),
                         ),
@@ -1326,3 +1333,7 @@ class Prochain extends StatelessWidget {
     );
   }
 }
+
+
+
+

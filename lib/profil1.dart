@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:flutter_switch/flutter_switch.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:inscription/achat_jetons.dart';
+import 'package:inscription/changer_mdp_1.dart';
+import 'package:inscription/modifier%20info.dart';
 
 
 class Profil1 extends StatelessWidget {
@@ -117,7 +120,12 @@ class Profil1 extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10),
                                       color: const Color(0xffE25033),
                                     ),
-                                    child: TextButton(onPressed: (){}, child: Row(
+                                    child: TextButton(onPressed: (){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => AchatJetons()),
+                                      );
+                                    }, child: Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Icon(FeatherIcons.shoppingCart,color: Colors.white,size: 20.0,),
@@ -174,7 +182,12 @@ class Profil1 extends StatelessWidget {
                                               ),
                                             ),
                                             IconButton(
-                                              onPressed: () {},
+                                              onPressed: (){
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) => ModifierInfos()),
+                                                );
+                                              },
                                               icon: Icon(
                                                 Icons.arrow_forward_ios_outlined,
                                                 size: 18,
@@ -195,7 +208,12 @@ class Profil1 extends StatelessWidget {
                                                 color: const Color(0xff333333),),
                                             ),
                                             IconButton(
-                                              onPressed: () {},
+                                              onPressed: (){
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) => ChangerMdp1()),
+                                                );
+                                              },
                                               icon: Icon(
                                                 Icons.arrow_forward_ios_outlined,
                                                 size: 18,

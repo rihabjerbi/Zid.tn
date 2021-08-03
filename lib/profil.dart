@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:inscription/Se_connecter.dart';
+import 'package:inscription/changer_mdp.dart';
+import 'package:inscription/inscription.dart';
+import 'package:inscription/modifier%20info.dart';
 //import 'package:flutter_switch/flutter_switch.dart';
 
 
@@ -67,42 +71,54 @@ class Profil extends StatelessWidget {
                         children: [
                           Container(
                             margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                            child: Row(
-                              children: [
-                                Container(
-                                    width: 147,
-                                    height: 41,
-                                    decoration: BoxDecoration(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Container(
+                                      width: 147,
+                                      height: 41,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          color: Colors.white),
+                                      child: TextButton(
+                                          onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => Inscriptions()),
+                                              );
+                                            },
+                                          child: Text(
+                                            'S\'inscrire',
+                                            style: TextStyle(color: Colors.black),
+                                          ))),
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Container(
+                                      width: 147,
+                                      height: 41,
+                                      decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        color: Colors.white),
-                                    child: TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'S\'inscrire',
-                                          style: TextStyle(color: Colors.black),
-                                        ))),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                Container(
-                                    width: 147,
-                                    height: 41,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      gradient: LinearGradient(
-                                        colors: <Color>[
-                                          const Color(0xffE25033),
-                                          const Color(0xffFF9985),
-                                        ],
+                                        gradient: LinearGradient(
+                                          colors: <Color>[
+                                            const Color(0xffE25033),
+                                            const Color(0xffFF9985),
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                    child: TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'Se connecter',
-                                          style: TextStyle(color: Colors.white),
-                                        ))),
-                              ],
+                                      child: TextButton(
+                                          onPressed: (){
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => SeConnecter()),
+                                            );
+                                          },
+                                          child: Text(
+                                            'Se connecter',
+                                            style: TextStyle(color: Colors.white),
+                                          ))),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -141,7 +157,12 @@ class Profil extends StatelessWidget {
                                       ),
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: (){
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => ModifierInfos()),
+                                        );
+                                      },
                                       icon: Icon(
                                         Icons.arrow_forward_ios_outlined,
                                         size: 18,
@@ -162,7 +183,12 @@ class Profil extends StatelessWidget {
                                         color: const Color(0xff333333),),
                                     ),
                                     IconButton(
-                                      onPressed: () {},
+                                      onPressed: (){
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => ChangerMdp()),
+                                        );
+                                      },
                                       icon: Icon(
                                         Icons.arrow_forward_ios_outlined,
                                         size: 18,

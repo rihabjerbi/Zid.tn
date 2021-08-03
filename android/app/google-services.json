@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988705136536",
+    "project_id": "zidtn-6f711",
+    "storage_bucket": "zidtn-6f711.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988705136536:android:46e88c9710293dcb2bd5ed",
+        "android_client_info": {
+          "package_name": "com.ri.inscription"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988705136536-i2fe4ld47uncnthg62ug1g9gare9as6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnDC51DZt1uGYnmoB_hceFyDiivMP9w44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988705136536-i2fe4ld47uncnthg62ug1g9gare9as6v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
